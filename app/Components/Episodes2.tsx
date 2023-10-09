@@ -65,14 +65,16 @@ const Episodes2 = () => {
                 )}
             </div>
             <div className="p-2">
-                {episodesSelected1.map((episode, index) => (
-                    <p key={index} className="font-bold text-[--plum-100] text-sm">
-                        Episode {episode.id} -{' '}
-                        <span className="font-normal text-[--plum-200]">
-                        {episode.name} - {episode.air_date}
-                        </span>
-                    </p>
-                ))}
+            {episodesSelected1 !== undefined && episodesSelected1.length > 0? episodesSelected1.map((episode, index) => (
+                <p key={index} className="font-bold text-[--plum-100] text-sm">
+                    Episode {episode.id} -{' '}
+                    <span className="font-normal text-[--plum-200]">
+                    {episode.name} - {episode.air_date}
+                    </span>
+                </p>
+                )) : (
+                <h2>No Character selected yet.</h2>
+            )}
             </div>
         </section>
     );

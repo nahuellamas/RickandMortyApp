@@ -57,7 +57,7 @@ function CharacterCard({ character, selectdType }: CharacterCardProps) {
   };
 
   return (
-    <div
+    <div  data-testid="character-card"
       onClick={handleAddToSelected}
       className={`flex flex-row justify-start items-center w-full p-1 ${
         isSelected ? 'bg-[--plum-600]' : 'bg-[--plum-900] hover:bg-[--plum-700]'
