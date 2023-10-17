@@ -21,11 +21,14 @@ interface CharacterCardProps {
 
 function CharacterCard({ character, selectdType }: CharacterCardProps) {
   const dispatch = useDispatch();
+  const charactersSelected1 = useCharacter1();
+  const charactersSelected2 = useCharacter2();
+
   const isSelected = useSelector((state: RootState) => {
     if (selectdType === 'character1') {
-      return state.characters.charactersSelected1.some((c) => c.id === character.id);
+      return charactersSelected1.some((c) => c.id === character.id);
     } else if (selectdType === 'character2') {
-      return state.characters.charactersSelected2.some((c) => c.id === character.id);
+      return charactersSelected2.some((c) => c.id === character.id);
     }
     return false;
   });
